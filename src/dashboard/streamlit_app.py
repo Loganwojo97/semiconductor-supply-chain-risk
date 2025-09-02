@@ -5,6 +5,10 @@ from pathlib import Path
 import os
 import json
 
+# Configure Plotly to work properly with Streamlit
+import plotly.io as pio
+pio.renderers.default = "browser"
+
 st.set_page_config(page_title="Semiconductor Risk Dashboard", layout="wide")
 
 st.title("🏭 Semiconductor Supply Chain Risk Dashboard")
@@ -84,24 +88,52 @@ if csv_files:
             st.success("✅ No companies in critical risk category")
     
     # Risk Score Chart
-    st.header("🎯 Financial Risk Scores")
-    fig = px.bar(df.sort_values('Financial_Risk_Score', ascending=False), 
-                 x='Company', y='Financial_Risk_Score',
-                 title='Financial Risk Scores by Company',
-                 color='Financial_Risk_Score',
-                 color_continuous_scale='RdYlBu_r')
-    fig.update_layout(xaxis_tickangle=-45)
-    st.plotly_chart(fig, use_container_width=True)
-    
-    # Volatility Analysis
-    if 'Volatility_30d' in df.columns:
-        st.header("📈 Volatility vs Risk Analysis")
-        fig2 = px.scatter(df, x='Volatility_30d', y='Financial_Risk_Score',
-                         size='Current_Price', hover_name='Company',
-                         title='Risk Score vs 30-Day Volatility',
-                         labels={'Volatility_30d': 'Volatility (30-day)', 
-                                'Financial_Risk_Score': 'Risk Score'})
-        st.plotly_chart(fig2, use_container_width=True)
+st.header("🎯 Financial Risk Scores")
+fig = px.bar(df.sort_values('Financial_Risk_Score', ascending=False), 
+             x='Company', y='Financial_Risk_Score',
+             title='Financial Risk Scores by Company',
+             color='Financial_Risk_Score',
+             color_continuous_scale='RdYlBu_r')
+fig.update_layout(
+    xaxis_tickangle=-45,
+    height=500,
+    showlegend=False
+)
+fig.update_traces(
+    hovertemplate='<b>%{x}</b><br>Risk Score: %{y:.2f}<extra></extra>'
+)
+st.plotly_chart(fig, use_container_width=True, config={'displayModeBar': False})
+
+# Feature Importance Chart
+with col1:
+    st.subheader("Feature Importance")
+    feature_data = {
+        'Feature': ['Current_vs_52w_High', 'Volatility_30d', 'Price_Change_30d', 'Current_vs_52w_Low', 'price_level', 'Volume_Change_Ratio'],
+        'Importance': [0.758, 0.704, 0.660, 0.273, 0.247, 0.157]
+    }
+    feature_df = pd.DataFrame(feature_data)
+    fig_features = px.bar(feature_df, 
+                         y='Feature', x='Importance', 
+                         orientation='h',
+                         title='Most Predictive Risk Factors',
+                         color='Importance',
+                         color_continuous_scale='viridis')
+    fig_features.update_layout(height=400, showlegend=False)
+    st.plotly_chart(fig_features, use_container_width=True, config={'displayModeBar': False})
+
+# Volatility Analysis
+if 'Volatility_30d' in df.columns:
+    st.header("📈 Volatility vs Risk Analysis")
+    fig2 = px.scatter(df, x='Volatility_30d', y='Financial_Risk_Score',
+                     size='Current_Price', hover_name='Company',
+                     title='Risk Score vs 30-Day Volatility',
+                     labels={'Volatility_30d': 'Volatility (30-day)', 
+                            'Financial_Risk_Score': 'Risk Score'})
+    fig2.update_layout(height=500)
+    fig2.update_traces(
+        hovertemplate='<b>%{hovertext}</b><br>Volatility: %{x:.1%}<br>Risk Score: %{y:.2f}<extra></extra>'
+    )
+    st.plotly_chart(fig2, use_container_width=True, config={'displayModeBar': False})
     
     # News sentiment integration (if available)
     st.header("📰 News Sentiment Analysis")
