@@ -1,0 +1,313 @@
+{
+    "metadata": {
+        "company": "TSMC",
+        "prediction": 94.40733634239348,
+        "confidence": 0.997486895467598,
+        "timestamp": "2025-09-02T05:36:55.915505",
+        "risk_level": "critical"
+    },
+    "key_insights": {
+        "risk_score": "94.4%",
+        "confidence": "99.7%",
+        "primary_driver": "operational",
+        "top_risk_factors": [
+            {
+                "feature": "geopolitical_tension_index",
+                "impact": "25.31",
+                "direction": "increases",
+                "value": "2.50"
+            },
+            {
+                "feature": "supplier_concentration",
+                "impact": "12.22",
+                "direction": "increases",
+                "value": "1.80"
+            },
+            {
+                "feature": "natural_disaster_risk",
+                "impact": "3.08",
+                "direction": "increases",
+                "value": "0.39"
+            },
+            {
+                "feature": "inventory_days",
+                "impact": "2.64",
+                "direction": "increases",
+                "value": "-1.50"
+            },
+            {
+                "feature": "cyber_threat_level",
+                "impact": "-0.28",
+                "direction": "decreases",
+                "value": "0.95"
+            }
+        ]
+    },
+    "risk_breakdown": {
+        "operational": {
+            "impact": "14.89",
+            "level": "medium",
+            "contributors": [
+                {
+                    "feature": "supplier_concentration",
+                    "impact": 12.21629211925997,
+                    "value": 1.8,
+                    "direction": "increases"
+                },
+                {
+                    "feature": "inventory_days",
+                    "impact": 2.638037442434535,
+                    "value": -1.5,
+                    "direction": "increases"
+                },
+                {
+                    "feature": "lead_time_variance",
+                    "impact": 0.03564072509054817,
+                    "value": -0.5223599258541148,
+                    "direction": "increases"
+                }
+            ]
+        },
+        "environmental": {
+            "impact": "3.08",
+            "level": "low",
+            "contributors": [
+                {
+                    "feature": "natural_disaster_risk",
+                    "impact": 3.075502208638477,
+                    "value": 0.38658258917092975,
+                    "direction": "increases"
+                }
+            ]
+        },
+        "market": {
+            "impact": "0.05",
+            "level": "low",
+            "contributors": [
+                {
+                    "feature": "customer_concentration",
+                    "impact": 0.0528458907684229,
+                    "value": 0.8745876458098074,
+                    "direction": "increases"
+                }
+            ]
+        }
+    },
+    "what_if_scenarios": [
+        {
+            "description": "supplier_concentration 25% decrease",
+            "current": "1.80",
+            "new": "1.35",
+            "risk_change": "-4.4%",
+            "new_risk": "90.0%"
+        },
+        {
+            "description": "natural_disaster_risk 25% decrease",
+            "current": "0.39",
+            "new": "0.29",
+            "risk_change": "-0.8%",
+            "new_risk": "93.6%"
+        },
+        {
+            "description": "natural_disaster_risk 25% increase",
+            "current": "0.39",
+            "new": "0.48",
+            "risk_change": "0.2%",
+            "new_risk": "94.6%"
+        },
+        {
+            "description": "supplier_concentration 25% increase",
+            "current": "1.80",
+            "new": "2.25",
+            "risk_change": "0.2%",
+            "new_risk": "94.6%"
+        },
+        {
+            "description": "natural_disaster_risk 10% decrease",
+            "current": "0.39",
+            "new": "0.35",
+            "risk_change": "-0.1%",
+            "new_risk": "94.3%"
+        }
+    ],
+    "similar_historical_cases": [
+        {
+            "similarity": "19.1%",
+            "historical_risk": "95.3%",
+            "risk_difference": "+0.9%",
+            "key_differences": [
+                {
+                    "feature": "geopolitical_tension_index",
+                    "difference": 0.7504160957945794,
+                    "this_value": 2.5,
+                    "similar_value": 1.7495839042054206
+                },
+                {
+                    "feature": "lead_time_variance",
+                    "difference": 1.2120677310993093,
+                    "this_value": -0.5223599258541148,
+                    "similar_value": 0.6897078052451944
+                },
+                {
+                    "feature": "financial_health_score",
+                    "difference": 0.8793418077504518,
+                    "this_value": 0.3763670371991087,
+                    "similar_value": -0.5029747705513431
+                }
+            ]
+        },
+        {
+            "similarity": "18.8%",
+            "historical_risk": "80.7%",
+            "risk_difference": "-13.7%",
+            "key_differences": [
+                {
+                    "feature": "geopolitical_tension_index",
+                    "difference": 1.0847954732981766,
+                    "this_value": 2.5,
+                    "similar_value": 1.4152045267018234
+                },
+                {
+                    "feature": "inventory_days",
+                    "difference": 1.3546505776861149,
+                    "this_value": -1.5,
+                    "similar_value": -0.1453494223138852
+                },
+                {
+                    "feature": "lead_time_variance",
+                    "difference": 0.8697574122888768,
+                    "this_value": -0.5223599258541148,
+                    "similar_value": 0.347397486434762
+                }
+            ]
+        },
+        {
+            "similarity": "18.3%",
+            "historical_risk": "90.3%",
+            "risk_difference": "-4.1%",
+            "key_differences": [
+                {
+                    "feature": "geopolitical_tension_index",
+                    "difference": 1.5351483669025425,
+                    "this_value": 2.5,
+                    "similar_value": 0.9648516330974576
+                },
+                {
+                    "feature": "cyber_threat_level",
+                    "difference": 1.7602313930481586,
+                    "this_value": 0.9506278731265124,
+                    "similar_value": -0.8096035199216461
+                },
+                {
+                    "feature": "demand_volatility",
+                    "difference": 1.3501232088131028,
+                    "this_value": -0.9260621643490131,
+                    "similar_value": 0.4240610444640897
+                }
+            ]
+        }
+    ],
+    "model_confidence_analysis": {
+        "data_density": "0.0%",
+        "feature_coverage": "100.0%",
+        "prediction_stability": "100.0%",
+        "model_agreement": "91.9%",
+        "overall": "73.0%"
+    },
+    "feature_contributions": [
+        {
+            "feature": "geopolitical_tension_index",
+            "contribution": 25.307979739653476,
+            "importance": 25.307979739653476,
+            "current_value": 2.5,
+            "baseline_value": 0.04313431768959083,
+            "direction": "increases"
+        },
+        {
+            "feature": "supplier_concentration",
+            "contribution": 12.21629211925997,
+            "importance": 12.21629211925997,
+            "current_value": 1.8,
+            "baseline_value": -0.02785162844412495,
+            "direction": "increases"
+        },
+        {
+            "feature": "natural_disaster_risk",
+            "contribution": 3.075502208638477,
+            "importance": 3.075502208638477,
+            "current_value": 0.38658258917092975,
+            "baseline_value": 0.025254679204406744,
+            "direction": "increases"
+        },
+        {
+            "feature": "inventory_days",
+            "contribution": 2.638037442434535,
+            "importance": 2.638037442434535,
+            "current_value": -1.5,
+            "baseline_value": -0.08704997473064366,
+            "direction": "increases"
+        },
+        {
+            "feature": "cyber_threat_level",
+            "contribution": -0.2834340737636583,
+            "importance": 0.2834340737636583,
+            "current_value": 0.9506278731265124,
+            "baseline_value": -0.0037223555711912723,
+            "direction": "decreases"
+        },
+        {
+            "feature": "production_capacity",
+            "contribution": 0.2560579806711703,
+            "importance": 0.2560579806711703,
+            "current_value": -0.31249487814126115,
+            "baseline_value": 0.011753808181487621,
+            "direction": "increases"
+        },
+        {
+            "feature": "shipping_delays",
+            "contribution": -0.21100443179169037,
+            "importance": 0.21100443179169037,
+            "current_value": 2.0305457232242023,
+            "baseline_value": 0.021438562163873152,
+            "direction": "decreases"
+        },
+        {
+            "feature": "technology_dependencies",
+            "contribution": 0.20543662952736128,
+            "importance": 0.20543662952736128,
+            "current_value": 0.5059343058207516,
+            "baseline_value": -0.06530995363431653,
+            "direction": "increases"
+        },
+        {
+            "feature": "quality_issues",
+            "contribution": 0.10620951991281066,
+            "importance": 0.10620951991281066,
+            "current_value": -0.25880086360891674,
+            "baseline_value": 0.042206443270244275,
+            "direction": "increases"
+        },
+        {
+            "feature": "demand_volatility",
+            "contribution": -0.10530474307113817,
+            "importance": 0.10530474307113817,
+            "current_value": -0.9260621643490131,
+            "baseline_value": -0.009752960764773548,
+            "direction": "decreases"
+        }
+    ],
+    "recommendations": [
+        {
+            "priority": "medium",
+            "action": "Develop contingency plans",
+            "reason": "Elevated geopolitical tensions contributing 25.3% to risk",
+            "expected_impact": "Improve response time by 30%"
+        },
+        {
+            "priority": "high",
+            "action": "Diversify supplier base",
+            "reason": "High supplier concentration contributing 12.2% to risk",
+            "expected_impact": "Reduce risk by 8-12%"
+        }
+    ]
+}
