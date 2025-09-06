@@ -10,7 +10,7 @@ This project demonstrates end-to-end ML engineering for supply chain risk assess
 - Multi-proxy validation using financial markets, news sentiment, and expert assessments
 - Production-ready data pipeline and model deployment
 
-**Live Dashboard**: https://semiconductor-supply-chain-risk-f2ybtwblylaixbvdqzmuer.streamlit.app/  
+**Live Dashboard**: https://semiconductor-supply-chain-risk.streamlit.app/  
 
 ## 🚀 Quick Start
 
